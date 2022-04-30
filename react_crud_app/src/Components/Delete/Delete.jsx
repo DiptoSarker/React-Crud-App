@@ -12,7 +12,7 @@ const Delete = () => {
 
   const deleteUser = (id) => {
     const user = users.filter((user) => user.id != id);
-    setUsers([user]);
+    setUsers([...user]);
   }
 
 
