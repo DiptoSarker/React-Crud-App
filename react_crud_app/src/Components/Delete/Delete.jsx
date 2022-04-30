@@ -7,13 +7,13 @@ import "./Delete.css";
 
 
 const Delete = () => {
-  const [users, setUser] = useContext(UserContext); 
+  const [users, setUsers] = useContext(UserContext); 
   const { id } = useParams();
 
   const deleteUser = (id) => {
     const user = users.filter((user) => user.id != id);
-    setUser([user]);
-  };
+    setUsers([user]);
+  }
 
 
   return (
@@ -25,7 +25,7 @@ const Delete = () => {
         <Modal.Footer>
           <Link to="/">
             <Button className="delete__btn" variant="info">Cancel</Button>
-            <Button onClick={() => deleteUser(id)} variant="danger">
+            <Button className="delete__btn" onClick={() => deleteUser(id)} variant="danger">
               Delete
             </Button>
           </Link>
