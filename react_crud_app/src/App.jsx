@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom';
+import { Routes,Route,Link, BrowserRouter} from 'react-router-dom';
 
 import './App.css'
 import Delete from './Components/Delete/Delete';
@@ -12,19 +12,18 @@ function App() {
   return (
    <div className='App'>
      <UserProvider>
-      <Router>
-       <Switch>
+      <BrowserRouter>
+       <Routes>
 
-        <Route path="/delete/:id">
-           <Delete/>
-         </Route>
+        <Route path="/delete/:id" element={<Delete/>}/>
+          
 
-         <Route path="/">
-           <Home/>
-         </Route>
+         <Route path="/" element={<Home/>}/>
+         
 
-       </Switch>
-      </Router>
+       </Routes>
+       </BrowserRouter>
+      
      </UserProvider>
    </div>
      
