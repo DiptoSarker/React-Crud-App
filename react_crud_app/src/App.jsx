@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Routes,Route,Link, BrowserRouter} from 'react-router-dom';
-
 import './App.css'
 import Delete from './Components/Delete/Delete';
 import Home from './Components/Home/Home';
@@ -16,7 +15,7 @@ function App() {
       <BrowserRouter>
        <Routes>
 
-        
+        <Route path="/read/:id" element={<Read/>}/>
 
         <Route path="/delete/:id" element={<Delete/>}/>
           
